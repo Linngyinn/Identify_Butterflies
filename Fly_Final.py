@@ -244,17 +244,17 @@ if __name__ == "__main__":
     receive_trades = obj.filter_receive_trades()
     pay_trades = obj.filter_pay_trades()
     
-    if os.path.exists(r"Z:\Business\Personnel\Ling Yin\Flys_Ideas\Output/" + str(today)):
+    if os.path.exists(r"Z:\Flys_Ideas\Output/" + str(today)):
             
-        with pd.ExcelWriter(r"Z:\Business\Personnel\Ling Yin\Flys_Ideas\Output/" + str(today) + "/Fly_" + str(cty) + "_" +  str(today) + ".xlsx") as writer:  
+        with pd.ExcelWriter(r"Z:\Flys_Ideas\Output/" + str(today) + "/Fly_" + str(cty) + "_" +  str(today) + ".xlsx") as writer:  
             receive_trades.to_excel(writer, sheet_name='Receive Flys')
             pay_trades.to_excel(writer, sheet_name='Pay Flys')
             unfiltered.to_excel(writer, sheet_name='Unfiltered')
                 
     else:
-        os.mkdir(r"Z:\Business\Personnel\Ling Yin\Flys_Ideas\Output/" + str(today))
+        os.mkdir(r"Z:\Flys_Ideas\Output/" + str(today))
 
-        with pd.ExcelWriter(r"Z:\Business\Personnel\Ling Yin\Flys_Ideas\Output/" + str(today) + "/Fly_" + str(cty) + "_" + str(today) + ".xlsx") as writer:  
+        with pd.ExcelWriter(r"Z:\Flys_Ideas\Output/" + str(today) + "/Fly_" + str(cty) + "_" + str(today) + ".xlsx") as writer:  
             receive_trades.to_excel(writer, sheet_name='Receive Flys')
             pay_trades.to_excel(writer, sheet_name='Pay Flys')
             unfiltered.to_excel(writer, sheet_name='Unfiltered')
